@@ -1,0 +1,44 @@
+<!-- TITLE -->
+<div class="mb-40 mt-40">
+    <h1>Vehicles Edit</h1>
+</div>
+<div class="card mb-40">
+    <div class="card-header">
+        <i class="fa fa-edit"></i> Edit
+    </div>
+    <div class="card-body">
+        <form #editForm="ngForm" [ngClass]="{'was-validated': formValid!=null}">
+            <div class="row justify-content-md-center">
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <label for="DateJoined">DateJoined</label>
+                        <input type="date" class="form-control" id="DateJoined" [(ngModel)]="item.DateJoined" name="DateJoined" #DateJoined="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="Manufacturer">Manufacturer *</label>
+                        <input type="text" class="form-control" id="Manufacturer" [(ngModel)]="item.Manufacturer" name="Manufacturer" #Manufacturer="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Model">Model</label>
+                        <input type="text" class="form-control" id="Model" [(ngModel)]="item.Model" name="Model" #Model="ngModel" >
+                    </div>
+                    <div class="form-group">
+                        <label for="Registration">Registration *</label>
+                        <input type="text" class="form-control" id="Registration" [(ngModel)]="item.Registration" name="Registration" #Registration="ngModel" required>
+                        <div class="invalid-feedback">Value is required</div>
+                    </div>
+
+
+        
+
+                    <!-- BUTTON BAR -->
+                    <div class="mt-40">
+                        <button class="btn btn-primary pull-right" (click)="save(editForm.valid)">Save</button>
+                        <button class="btn btn-secondary pull-right mr-2" (click)="goBack()">Back To List</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
